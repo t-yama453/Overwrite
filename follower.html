@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNS Followers Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        .profile-header {
+            background-color: #ffffff;
+            /*color: white;*/
+            padding: 10px;
+            text-align: left;
+            /*height:50px*/
+            margin-bottom: 1px;
+            border-bottom: 3px solid #cbc8c8; /* ライン（ボーダー）を追加 */
+        }
+        .profile-header h1 {
+            margin: 0;
+            font-size: 17px;
+            font-family: '游ゴシック', sans-serif;
+        }
+        .followers-section {
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 1px auto;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        .follower {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* 名前とボタンを左右に配置 */
+            margin-bottom: 15px;
+        }
+        .follower img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .follower-info {
+            font-size: 14px;
+        }
+        .follower-info p {
+            margin: 0;
+        }
+        .follower-info .name {
+            font-weight: bold;
+        }
+        .follower-info .location {
+            color: #555;
+            font-size: 14px;
+        }
+        .follow-button {
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px; /* 丸みのある長方形 */
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: auto; /* 左側に自動スペースを入れてボタンを右に寄せる */
+        }
+        .follow-button:hover {
+            background-color: #155db0; /* ボタンのホバーカラー */
+        }
+        .follow-button2 {
+            background-color: #c3c3c3;
+            color: rgb(38, 38, 38);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px; /* 丸みのある長方形 */
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: auto; /* 左側に自動スペースを入れてボタンを右に寄せる */
+        }
+        .follow-button2:hover {
+            background-color: #acacac; /* ボタンのホバーカラー */
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-header">
+    <h1>＜&nbsp;多田翔吾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;フォロワー 86人</h1>
+</div>
+
+<div class="followers-section">
+    <div class="follower">
+        <img src="https://lh3.googleusercontent.com/d/1F5VL1cFmjMcv155OQ072OXSMf1UWGIJz" alt="Profile Picture">
+        <div class="follower-info">
+            <p class="name">重松　太一</p>
+            <p class="location"></p>
+        </div>
+        <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+    </div>
+    
+    <div class="follower">
+        <img src="https://lh3.googleusercontent.com/d/1j8Z5GbkIEG-VVoLafBI0zD9s3x5EI7eb" alt="Profile Picture">
+        <div class="follower-info">
+            <p class="name">水野　誠</p>
+            <p class="location"></p>
+        </div>
+        <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+    </div>
+
+    <div class="follower">
+        <img src="https://lh3.googleusercontent.com/d/1yaKfNfzIYMbEQpgutF9kzbwiknGiy_sR" alt="Profile Picture">
+        <div class="follower-info">
+            <p class="name">浜崎　恭花</p>
+            <p class="location"></p>
+        </div>
+        <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+    </div>
+
+    <div class="follower">
+      <img src="https://lh3.googleusercontent.com/d/1aCPaGjujitMky4dM2AgSpCiYfNzrO5wC" alt="Profile Picture">
+      <div class="follower-info">
+          <p class="name">篠田　健太郎</p>
+          <p class="location"></p>
+      </div>
+      <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+  </div>
+
+<div class="follower">
+    <img src="https://lh3.googleusercontent.com/d/1i9c5ltF4mnqToJrW73ba1ZzDz8c2I5OU" alt="Profile Picture">
+    <div class="follower-info">
+        <p class="name">松本　淳也</p>
+        <p class="location"></p>
+    </div>
+    <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/10WH4KZ1N6y01Bx7q3qJUzXDcQcyoccwY" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">清川　佳奈</p>
+      <p class="location"></p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+    <img src="https://lh3.googleusercontent.com/d/10QoVO49aDOz3olVCEfVipXkatPK9BrRi" alt="Profile Picture">
+    <div class="follower-info">
+        <p class="name">宮田　美紀</p>
+        <p class="location"></p>
+    </div>
+    <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/183y04LiblyRjtPkyJ33H-HetiBUe7Q5a" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">渋谷　幸太</p>
+      <p class="location"></p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+    <img src="https://lh3.googleusercontent.com/d/1jZ-JsEDILpEAnHr97jYzm9QUcsFETPX-" alt="Profile Picture">
+    <div class="follower-info">
+        <p class="name">町田　京</p>
+        <p class="location"></p>
+    </div>
+    <button class="follow-button2">フォロー中</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1sXT_90bvRJ541hmJAdc8-fFqx24IfeB9" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">神田　真一</p>
+      <p class="location"></p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1njQ2dxh-OknS7tOtXgrSKd_9u8mQQDCj" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">大原　和也</p>
+      <p class="location"></p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+<div class="follower">
+    <img src="https://lh3.googleusercontent.com/d/1SYUR8Y0JvKwQPBkBsdNG7J82sw7f8WnB" alt="Profile Picture">
+    <div class="follower-info">
+        <p class="name">中島　千春</p>
+        <p class="location"></p>
+    </div>
+    <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+    <img src="https://lh3.googleusercontent.com/d/1T-JZhkhuPvzYc7uFGaRu2sR9nlhQA8NQ" alt="Profile Picture">
+    <div class="follower-info">
+        <p class="name">品田　道弘</p>
+        <p class="location"></p>
+    </div>
+    <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1I7mTpYZBYBs2HRIwZlJ44gywzCQVcNdH" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">前田　翔一</p>
+      <p class="location"></p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1SYUR8Y0JvKwQPBkBsdNG7J82sw7f8WnB" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">田原　健次郎</p>
+      <p class="location"></p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1EzrC6ogyHLoV0M3pvboBO8yS5Q3BGWQD" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">松岡　美寿々</p>
+      <p class="location"></p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+<div class="follower">
+    <img src="https://lh3.googleusercontent.com/d/1z6AdIq21dNy0o_3xVc4B_n5C-us69WLS" alt="Profile Picture">
+    <div class="follower-info">
+        <p class="name">榊　真奈美</p>
+        <p class="location"></p>
+    </div>
+    <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+    <img src="https://lh3.googleusercontent.com/d/1PrgYI-3cT7IdRskwJ8_Z0_uKnOnNx9WR" alt="Profile Picture">
+    <div class="follower-info">
+        <p class="name">島津　瑞穂</p>
+        <p class="location"></p>
+    </div>
+    <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1g2b9vQhpFq3raSh0GxvdP2l9SDsFVqi4" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">John Doe</p>
+      <p class="location">New York, USA</p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1g2b9vQhpFq3raSh0GxvdP2l9SDsFVqi4" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">Jane Smith</p>
+      <p class="location">Los Angeles, USA</p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1g2b9vQhpFq3raSh0GxvdP2l9SDsFVqi4" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">John Doe</p>
+      <p class="location">New York, USA</p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1g2b9vQhpFq3raSh0GxvdP2l9SDsFVqi4" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">Jane Smith</p>
+      <p class="location">Los Angeles, USA</p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+<div class="follower">
+    <img src="https://lh3.googleusercontent.com/d/1g2b9vQhpFq3raSh0GxvdP2l9SDsFVqi4" alt="Profile Picture">
+    <div class="follower-info">
+        <p class="name">John Doe</p>
+        <p class="location">New York, USA</p>
+    </div>
+    <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+    <img src="https://lh3.googleusercontent.com/d/1g2b9vQhpFq3raSh0GxvdP2l9SDsFVqi4" alt="Profile Picture">
+    <div class="follower-info">
+        <p class="name">Jane Smith</p>
+        <p class="location">Los Angeles, USA</p>
+    </div>
+    <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1g2b9vQhpFq3raSh0GxvdP2l9SDsFVqi4" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">John Doe</p>
+      <p class="location">New York, USA</p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1g2b9vQhpFq3raSh0GxvdP2l9SDsFVqi4" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">Jane Smith</p>
+      <p class="location">Los Angeles, USA</p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1g2b9vQhpFq3raSh0GxvdP2l9SDsFVqi4" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">John Doe</p>
+      <p class="location">New York, USA</p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+
+<div class="follower">
+  <img src="https://lh3.googleusercontent.com/d/1g2b9vQhpFq3raSh0GxvdP2l9SDsFVqi4" alt="Profile Picture">
+  <div class="follower-info">
+      <p class="name">Jane Smith</p>
+      <p class="location">Los Angeles, USA</p>
+  </div>
+  <button class="follow-button">フォローする</button> <!-- フォローボタン -->
+</div>
+  
+
+    <!-- Add more followers as needed -->
+</div>
+
+</body>
+</html>
