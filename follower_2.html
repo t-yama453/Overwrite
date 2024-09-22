@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Net</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4267B2;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        nav {
+            background-color: white;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 5px 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #4267B2;
+        }
+        .account-info {
+            background-color: white;
+            padding: 15px 0 130px 0;
+            position: relative;
+        }
+        .account-info .cover-photo {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            object-position: left;
+        }
+        .account-info .profile-container {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 8px;
+            left: 5%; /* 左から5%の位置に配置 */
+        }
+        .account-info .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-right: 20px;
+        }
+        .account-info h2 {
+            margin: 10px 0 0 0;
+            font-size: 30px;
+            color: #333;
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column; /* 縦方向に要素を並べる */
+        }
+
+        .profile-info h2, .profile-info span {
+            margin: 0;
+            font-size: 14px; /* フォロワー情報のフォントサイズを適宜調整 */
+            color: #666;
+        }
+        .profile-info h2{
+            color:#333;
+        }
+
+        .container {
+            display: flex;
+            padding: 20px;
+            margin-top: 60px; /* アイコンとアカウント名がPost titleと被らないように */
+        }
+        @media(min-width: 768px) {
+            .container {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+        .sidebar, .main-content {
+            background-color: white;
+            padding: 15px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+        }
+        /*@media(min-width: 768px) {
+            .sidebar {
+              background-color: white;
+              padding: 15px;
+              margin: 10px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              max-width: 250px;
+              /* Sidebarの高さをコンテンツに合わせるために高さを設定しない 
+            }
+            .main-content {
+                max-width: 750px;
+                display: flex;
+                flex-direction: column;
+            }
+        }*/
+        .post {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .post-header .name-and-title {
+            display: flex;
+            flex-direction: column; /* 縦方向に配置 */
+        }
+
+        .post-header .sub-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 3px;
+            height: 20px; /* profile-icon の高さに合わせる */
+            line-height: 20px; /* テキストを中央揃え */
+        }
+
+
+        .post h3 {
+            margin: 0;
+            font-size: 20px;
+            display: flex;
+            align-items: center; /* h3の内容を画像に対して垂直方向に中央揃え */
+        }
+        .post img.profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .post p {
+            margin: 10px 0;
+        }
+        .post img.example-image {
+            max-width: 100%;
+            height: 500px;
+            margin-top: 10px;
+        }
+        .comment-section {
+            margin-top: 10px;
+        }
+        .comment-section input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border-radius: 5px; /* 角を少し丸くする */
+            border: 1px solid #ccc; /* 枠線を指定 */
+        }
+        .sidebar li{
+          font-size:18px;
+        }
+
+        .comment-section p{
+            color:#808080;
+        }
+
+        @media(max-width: 767px) {
+            .account-info {
+            padding: 15px 0 100px 0;
+            }
+            .account-info .profile-container {
+                left: 0;
+                right:0;
+                padding: 5px;
+                width: 100%;
+                height: 100px
+            }
+            .account-info .profile-pic {
+                width: 100px;
+                height: 100px;
+                margin-right:5px;
+            }
+            .account-info h2 {
+                font-size: 20px;
+            }
+            .container {
+            margin-top: 0px; /* アイコンとアカウント名がPost titleと被らないように */
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            }
+            .sidebar {
+                display: none; /* スマートフォンではFriendコンテナを非表示に */
+            }
+            .post{
+                width: 100%;
+            }
+            .post h3 {
+                font-size: 17px; /* スマートフォン用のフォントサイズ */
+            }
+            .post img.example-image{
+                height: 200px;
+                width: 100%;
+            }
+            .post-header img{
+                width: 100%;
+            }
+            .main-content{
+                max-width: 100%;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Social Net</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">ホーム</a></li>
+            <li><a href="#">プロフィール</a></li>
+            <li><a href="#">メッセージ</a></li>
+            <li><a href="#">通知</a></li>
+            <li><a href="#">設定</a></li>
+        </ul>
+    </nav>
+
+    <!-- アカウント情報セクション -->
+    <div class="account-info">
+        <img src="https://lh3.googleusercontent.com/d/1tmgWoKsDG9PPZQIUp1fThgFqobr7jg3e" alt="Cover Photo" class="cover-photo">
+        <div class="profile-container">
+            <img src="https://lh3.googleusercontent.com/d/10QoVO49aDOz3olVCEfVipXkatPK9BrRi" alt="Profile Picture" class="profile-pic">
+            <div class="profile-info">
+                <h2>宮田美紀</h2> <!-- アカウント名 -->
+                <span>124フォロワー　153フォロー</span> <!-- フォロワー・フォロー数 -->
+            </div>
+        </div>
+    </div>
+
+   <!-- <div class="container">
+        <div class="sidebar">
+            <h2>Friends</h2>
+            <ul>
+                <li><a href="#">藤井雄大</a></li>
+                <br>
+                <li><a href="#">田尾原美咲</a></li>
+                <br>
+                <li><a href="#">住田健一</a></li>
+            </ul>
+        </div> -->
+
+        <div class="main-content">
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://lh3.googleusercontent.com/d/10QoVO49aDOz3olVCEfVipXkatPK9BrRi" alt="Profile Icon" class="profile-icon">
+                    <div class="name-and-title">
+                        <h3>宮田美紀</h3>
+                        <span class="sub-text">8月23日</span>
+                    </div>
+                </div>
+                <p>ああ、良い旅だった～　もっと休みほしい！！！</p>
+                <img src="https://lh3.googleusercontent.com/d/1VMLsFHv02dljlX8A7GD1c0AMFrjagmgu" alt="Example image" class="example-image">
+                <div class="comment-section">
+                    <input type="text" placeholder="コメントを書く...">
+                    <br>
+                    <p>コメント9件   いいね20件</p>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://lh3.googleusercontent.com/d/10QoVO49aDOz3olVCEfVipXkatPK9BrRi" alt="Profile Icon" class="profile-icon">
+                    <div class="name-and-title">
+                        <h3>宮田美紀</h3>
+                        <span class="sub-text">8月11日</span>
+                        </div>
+                    
+                </div>
+                <p>お盆休み楽しみだああああ</p>
+                <div class="comment-section">
+                    <input type="text" placeholder="コメントを書く...">
+                    <p>コメント5件   いいね13件</p>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://lh3.googleusercontent.com/d/10QoVO49aDOz3olVCEfVipXkatPK9BrRi" alt="Profile Icon" class="profile-icon">
+                    <div class="name-and-title">
+                        <h3>宮田美紀</h3>
+                        <span class="sub-text">7月20日</span>
+                    </div>
+                </div>
+                <p>有給申請したら嫌な顔された・・ww</p>
+                <div class="comment-section">
+                    <input type="text" placeholder="コメントを書く...">
+                    <br>
+                    <p>コメント13件   いいね17件</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
